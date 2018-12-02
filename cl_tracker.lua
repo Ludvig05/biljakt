@@ -22,7 +22,7 @@ AddEventHandler("tracker:trackerremove", function()
         deployed = false
         local plycoords = GetEntityCoords(GetPlayerPed(-1))
         SetNewWaypoint(plycoords.x + 2, plycoords.y)
-        showNotification("~h~~o~Star Chase~h~: ~w~Tracker deactivated!")
+        showNotification("~h~~o~Biljakt~h~: ~w~GPS-Puck avstängd!")
     end
 end)
 
@@ -35,7 +35,7 @@ AddEventHandler("tracker:trackerset", function()
         if trackedveh ~= nil then
             if IsEntityAVehicle(trackedveh) then
                 local coords = GetEntityCoords(trackedveh)
-                showNotification("~o~~h~Star Chase:~h~~w~ Deployed!\n~h~Model:~h~ "..GetLabelText(GetDisplayNameFromVehicleModel(GetEntityModel(trackedveh))).."\n~h~Plate:~h~ "..GetVehicleNumberPlateText(trackedveh))
+                showNotification("~o~~h~Biljakt:~h~~w~ GPS-Puck utplacerad!\n~h~Bilmodell:~h~ "..GetLabelText(GetDisplayNameFromVehicleModel(GetEntityModel(trackedveh))).."\n~h~Registeringsnummer:~h~ "..GetVehicleNumberPlateText(trackedveh))
                 SetNewWaypoint(coords.x, coords.y)
             end
         else
